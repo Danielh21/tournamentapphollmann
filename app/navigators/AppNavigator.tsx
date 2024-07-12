@@ -17,7 +17,7 @@ import { useColorScheme } from "react-native"
 import * as Screens from "app/screens"
 import Config from "../config"
 import { useStores } from "../models"
-import { DemoNavigator, DemoTabParamList } from "./DemoNavigator"
+import { DemoTabParamList } from "./DemoNavigator"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 import { colors } from "app/theme"
 
@@ -41,6 +41,7 @@ export type AppStackParamList = {
   // 🔥 Your screens go here
   // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
   Home: undefined
+  Overview: undefined
 }
 
 /**
@@ -68,7 +69,7 @@ const AppStack = observer(function AppStack() {
       initialRouteName={isAuthenticated ? "Home" : "Login"}
     >
       <Stack.Screen name="Home" component={Screens.HomeScreen} />
-      <Stack.Screen name="Demo" component={DemoNavigator} />
+      <Stack.Screen name="Overview" component={Screens.OverViewScreen} />
 
       {/* {isAuthenticated ? (
         <>

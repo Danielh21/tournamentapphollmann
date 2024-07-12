@@ -30,6 +30,7 @@ import { customFontsToLoad } from "./theme"
 import Config from "./config"
 import { GestureHandlerRootView } from "react-native-gesture-handler"
 import { ViewStyle } from "react-native"
+import { initializeApp } from "firebase/app"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
@@ -40,7 +41,8 @@ const config = {
     Login: {
       path: "",
     },
-    Welcome: "home",
+    home: "home",
+    overview: "overview",
     Demo: {
       screens: {
         DemoShowroom: {
@@ -97,6 +99,20 @@ function App(props: AppProps) {
     prefixes: [prefix],
     config,
   }
+
+  // Setting up Firebase
+  const firebaseConfig = {
+    // apiKey: "AIzaSyC6Vy8dLSBfRpAMuTT0-pZCireZWAAmJhk",
+    apiKey: process.env.EXPO_PUBLIC_FB_KEY,
+    authDomain: "tournamentapp-8d979.firebaseapp.com",
+    projectId: "tournamentapp-8d979",
+    storageBucket: "tournamentapp-8d979.appspot.com",
+    messagingSenderId: "530953020871",
+    appId: "1:530953020871:web:31106a879d06a6e2fc25e2",
+    measurementId: "G-JHJHVE2T0H",
+  }
+
+  initializeApp(firebaseConfig)
 
   // otherwise, we're ready to render the app
   return (
