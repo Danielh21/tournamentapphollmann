@@ -102,7 +102,6 @@ function App(props: AppProps) {
 
   // Setting up Firebase
   const firebaseConfig = {
-    // apiKey: "AIzaSyC6Vy8dLSBfRpAMuTT0-pZCireZWAAmJhk",
     apiKey: process.env.EXPO_PUBLIC_FB_KEY,
     authDomain: "tournamentapp-8d979.firebaseapp.com",
     projectId: "tournamentapp-8d979",
